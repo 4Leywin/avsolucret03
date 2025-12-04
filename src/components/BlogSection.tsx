@@ -8,28 +8,28 @@ const articles = [
     title: "Cuidados preventivos del mármol",
     excerpt:
       "Guía completa de mantenimiento y cuidados para mantener tu mármol en perfectas condiciones.",
-    image:
-      "/blog/01-blog.png",
+    image: "/blog/01-blog.png",
     readTime: "5 min",
     category: "Mármol",
+    slug: "/blog/cuidados-marmol",
   },
   {
     title: "Manual de cuidados del porcelanato",
     excerpt:
       "Preguntas frecuentes y cuidados preventivos para pisos de porcelanato de alto tránsito.",
-    image:
-      "/blog/02-blog.png",
+    image: "/blog/02-blog.png",
     readTime: "4 min",
     category: "Porcelanato",
+    slug: "/blog/cuidados-porcelanato",
   },
   {
     title: "Cuidados de lajas y mosaicos",
     excerpt:
       "Manual de cuidados preventivos para lajas, mosaicos Rossello y cuarzo.",
-    image:
-      "/blog/03-blog.png",
+    image: "/blog/03-blog.png",
     readTime: "6 min",
     category: "Lajas",
+    slug: "/blog/cuidados-lajas",
   },
 ];
 
@@ -62,12 +62,13 @@ const BlogSection = () => {
         {/* Articles Grid */}
         <div className="grid md:grid-cols-3 gap-6">
           {articles.map((article, index) => (
-            <motion.article
+            <motion.a
               key={article.title}
+              href={article.slug}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="card-premium overflow-hidden group cursor-pointer"
+              className="card-premium overflow-hidden group cursor-pointer block"
             >
               {/* Image */}
               <div className="relative h-48 overflow-hidden">
@@ -100,7 +101,7 @@ const BlogSection = () => {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
               </div>
-            </motion.article>
+            </motion.a>
           ))}
         </div>
       </div>

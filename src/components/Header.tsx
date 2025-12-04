@@ -22,11 +22,8 @@ const Header = () => {
         <nav className="flex items-center justify-between h-16 md:h-20 bg-background md:bg-transparent">
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-2">
-            {/* <span className="font-heading text-2xl md:text-3xl font-bold text-foreground">
-              AV <span className="text-gold">SOLUCRET</span>
-            </span> */}
             <img
-              src="main/logo.png"
+              src="/main/logo.png"
               alt="Logo Av Solucret"
               className="h-24 aspect-video object-contain "
             />

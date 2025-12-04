@@ -1,23 +1,57 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
-import { Play, ExternalLink } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef, useState } from "react";
+import { Play, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-// Puedes colocar vídeos en `public/gallery/*.mp4` y referenciarlos en `src`.
+// 6 items: videos en los costados, imágenes en el medio
 const gallery_content = [
-  { id: 1, type: 'video', title: 'Lavado', src: '/gallery/01-gallery.mp4' },
-  { id: 8, type: 'image', title: 'Mantenimiento de lajas', src: '/gallery/07-gallery.jpg' },
-  { id: 3, type: 'video', title: 'Mantenimiento de lajas', src: '/gallery/02-gallery.mp4' },
-  { id: 5, type: 'image', title: 'Lavado y Sellado', src: '/gallery/05-gallery.jpg' },
-  { id: 7, type: 'video', title: 'Decapado y sellado de porcelanato', src: '/gallery/04-gallery.mp4' },
-  { id: 6, type: 'video', title: 'Pulido y sellado de mesas de mármol', src: '/gallery/03-gallery.mp4' },
-  { id: 2, type: 'image', title: 'Pulido y vitrificado de concreto', src: '/gallery/06-gallery.jpg' },
-  { id: 9, type: 'image', title: 'Pulido y sellado de mesas de mármol', src: '/gallery/08-gallery.jpg' },
+  {
+    id: 1,
+    type: "video",
+    title: "Cristalizado Premium de Mármol kalliston white",
+    src: "/gallery/10-gallery.mp4",
+    position: "left", // video izquierda
+  },
+  {
+    id: 2,
+    type: "video",
+    title: "Cristalizado Premiun de Mosaicos Empastados",
+    src: "/gallery/11-gallery.mp4",
+    position: "left", // video izquierda
+  },
+  {
+    id: 3,
+    type: "image",
+    title: "Pulido lavado y sellado de Terracota o arcilla",
+    src: "/gallery/14-gallery.jpg",
+    position: "center", // imagen centro
+  },
+  {
+    id: 4,
+    type: "image",
+    title: "Decapado lavado y sellado de lajas",
+    src: "/gallery/15-gallery.jpg",
+    position: "center", // imagen centro
+  },
+  {
+    id: 5,
+    type: "video",
+    title: "Pulido diamantado Vitrificado de losetas de Granito- Terrazo",
+    src: "/gallery/12-gallery.mp4",
+    position: "right", // video derecha
+  },
+  {
+    id: 6,
+    type: "video",
+    title: "Cristalizado Premium de Mármol Travertino",
+    src: "/gallery/13-gallery.mp4",
+    position: "right", // video derecha
+  },
 ];
 
 interface GalleryItemProps {
-  item: typeof gallery_content[0];
+  item: (typeof gallery_content)[0];
   index: number;
   isInView: boolean;
   playingId: number | null;
@@ -43,7 +77,7 @@ const GalleryItem = ({
       target="_blank"
       rel="noopener noreferrer"
       onClick={(e) => {
-        if (item.type === 'video') {
+        if (item.type === "video") {
           e.preventDefault();
           onPlayClick(item.id);
         }
@@ -53,7 +87,7 @@ const GalleryItem = ({
       transition={{ duration: 0.5, delay: index * 0.05 }}
       className="block break-inside-avoid group relative rounded-xl overflow-hidden border border-gold/20 hover:border-gold/50 transition-all duration-300"
     >
-      {item.type === 'image' && (
+      {item.type === "image" && (
         <img
           src={item.src}
           alt={item.title}
@@ -62,7 +96,7 @@ const GalleryItem = ({
         />
       )}
 
-      {item.type === 'video' && (
+      {item.type === "video" && (
         <div className="w-full bg-black">
           <video
             ref={(el) => (videoRefs.current[item.id] = el)}
@@ -80,7 +114,7 @@ const GalleryItem = ({
       <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
       {/* Play button (visible for video items) */}
-      {item.type === 'video' && (
+      {item.type === "video" && (
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="w-16 h-16 rounded-full bg-gold/90 flex items-center justify-center opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 transition-all duration-300">
             <Play className="w-7 h-7 text-primary-foreground ml-1" />
@@ -101,7 +135,7 @@ const GalleryItem = ({
 
 const GallerySection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [playingId, setPlayingId] = useState<number | null>(null);
   const videoRefs = useRef<Record<number, HTMLVideoElement | null>>({});
 
@@ -139,23 +173,63 @@ const GallerySection = () => {
             Nuestros Trabajos en <span className="text-gold">Acción</span>
           </h2>
           <p className="text-muted-foreground">
-            Procesos reales de pulido y restauración. Mira cómo transformamos superficies.
+            Procesos reales de pulido y restauración. Mira cómo transformamos
+            superficies.
           </p>
         </motion.div>
 
-        {/* Masonry Grid */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-          {gallery_content.map((item, index) => (
-            <GalleryItem
-              key={item.id}
-              item={item}
-              index={index}
-              isInView={isInView}
-              playingId={playingId}
-              onPlayClick={handlePlayClick}
-              videoRefs={videoRefs}
-            />
-          ))}
+        {/* Grid con 3 columnas: videos izquierda, imágenes centro, videos derecha */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* Columna izquierda - Videos */}
+          <div className="space-y-4">
+            {gallery_content
+              .filter((item) => item.position === "left")
+              .map((item, index) => (
+                <GalleryItem
+                  key={item.id}
+                  item={item}
+                  index={index}
+                  isInView={isInView}
+                  playingId={playingId}
+                  onPlayClick={handlePlayClick}
+                  videoRefs={videoRefs}
+                />
+              ))}
+          </div>
+
+          {/* Columna central - Imágenes */}
+          <div className="space-y-4">
+            {gallery_content
+              .filter((item) => item.position === "center")
+              .map((item, index) => (
+                <GalleryItem
+                  key={item.id}
+                  item={item}
+                  index={index + 2}
+                  isInView={isInView}
+                  playingId={playingId}
+                  onPlayClick={handlePlayClick}
+                  videoRefs={videoRefs}
+                />
+              ))}
+          </div>
+
+          {/* Columna derecha - Videos */}
+          <div className="space-y-4">
+            {gallery_content
+              .filter((item) => item.position === "right")
+              .map((item, index) => (
+                <GalleryItem
+                  key={item.id}
+                  item={item}
+                  index={index + 4}
+                  isInView={isInView}
+                  playingId={playingId}
+                  onPlayClick={handlePlayClick}
+                  videoRefs={videoRefs}
+                />
+              ))}
+          </div>
         </div>
 
         {/* CTA */}
@@ -166,7 +240,11 @@ const GallerySection = () => {
           className="text-center mt-12"
         >
           <Button variant="goldOutline" size="lg" asChild>
-            <a href="https://www.tiktok.com/@avsolucret" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.tiktok.com/@avsolucret"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Ver más en TikTok
               <ExternalLink className="w-4 h-4" />
             </a>

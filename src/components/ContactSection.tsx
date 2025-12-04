@@ -25,7 +25,7 @@ const contactInfo = [
   },
 ];
 
-const socialLinks = [
+export const socialLinks = [
   {
     icon: Instagram,
     label: "Instagram",

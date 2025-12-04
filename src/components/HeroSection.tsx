@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
-
+import { socialLinks } from "./ContactSection";
 const HeroSection = () => {
   return (
     <section
@@ -85,28 +85,47 @@ const HeroSection = () => {
             </Button>
           </motion.div>
 
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-16 grid grid-cols-3 gap-8 max-w-lg"
-          >
-            {[
-              { number: "500+", label: "Proyectos" },
-              { number: "10+", label: "Años" },
-              { number: "100%", label: "Garantía" },
-            ].map((stat, index) => (
-              <div key={index} className="text-center md:text-left">
-                <div className="font-heading text-3xl md:text-4xl font-bold text-gold">
-                  {stat.number}
+          <div className="flex flex-col md:flex-row justify-between">
+            {/* Stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mt-16 grid grid-cols-3 gap-8 max-w-lg"
+            >
+              {[
+                { number: "500+", label: "Proyectos" },
+                { number: "10+", label: "Años" },
+                { number: "100%", label: "Garantía" },
+              ].map((stat, index) => (
+                <div key={index} className="text-center md:text-left">
+                  <div className="font-heading text-3xl md:text-4xl font-bold text-gold">
+                    {stat.number}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    {stat.label}
+                  </div>
                 </div>
-                <div className="text-sm text-muted-foreground">
-                  {stat.label}
-                </div>
+              ))}
+            </motion.div>
+            {/* Social Links */}
+            <div className="mt-2 md:mt-16">
+              <div className="flex gap-3">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 rounded-xl border border-gold/30 flex items-center justify-center text-foreground hover:bg-gold hover:text-primary-foreground hover:border-gold transition-all duration-300"
+                    aria-label={social.label}
+                  >
+                    <social.icon />
+                  </a>
+                ))}
               </div>
-            ))}
-          </motion.div>
+            </div>
+          </div>
         </div>
       </div>
 
