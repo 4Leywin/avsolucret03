@@ -7,32 +7,32 @@ const surfaces = [
   {
     name: "Mármol",
     image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=300&fit=crop",
+      "/general/piso-marmol.webp",
   },
   {
     name: "Granito",
     image:
-      "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=400&h=300&fit=crop",
+      "/general/piso-granito.webp",
   },
   {
     name: "Terrazo",
     image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+      "/general/piso-terrazo.jpg",
   },
   {
     name: "Porcelanato",
     image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=300&fit=crop",
+      "/general/piso-porcelanato.webp",
   },
   {
     name: "Concreto",
     image:
-      "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=400&h=300&fit=crop",
+      "/general/piso-concreto.jpg",
   },
   {
     name: "Lajas",
     image:
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&h=300&fit=crop",
+      "/general/piso-lajas.webp",
   },
 ];
 

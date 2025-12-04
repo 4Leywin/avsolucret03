@@ -34,17 +34,17 @@ const ProductSection = () => {
           <div className="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 border-gold rounded-bl-3xl" />
           <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-gold rounded-br-3xl" />
 
-          <div className="grid lg:grid-cols-2 gap-12 p-8 md:p-12 lg:p-16">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 p-6 md:p-12 lg:p-16">
             {/* Product Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6 }}
-              className="relative flex items-center justify-center"
+              className="relative flex items-center justify-center order-1 lg:order-2"
             >
-              <div className="relative w-full h-[30rem] max-w-md aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-gold/10 to-gold/5 p-6">
+              <div className="relative w-full h-[20rem] md:h-[30rem] max-w-md aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-gold/10 to-gold/5 p-4 md:p-6">
                 <img
-                  src="/products/solucret-01.jpg"
+                  src="/products/producto-main.jpg"
                   alt="Sellador Profesional para Piedra"
                   className="w-full h-full object-cover rounded-xl bg-red-300"
                 />
@@ -58,7 +58,7 @@ const ProductSection = () => {
               initial={{ opacity: 0, x: 30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex flex-col justify-center"
+              className="flex flex-col justify-center order-2 lg:order-1"
             >
               <span className="inline-block text-sm font-medium text-gold uppercase tracking-wider mb-4">
                 Producto Destacado

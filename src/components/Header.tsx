@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/50">
       <div className="container-custom">
-        <nav className="flex items-center justify-between h-16 md:h-20">
+        <nav className="flex items-center justify-between h-16 md:h-20 bg-background md:bg-transparent">
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-2">
             {/* <span className="font-heading text-2xl md:text-3xl font-bold text-foreground">
@@ -84,9 +84,9 @@ const Header = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
-            className="fixed inset-0 top-16 bg-background/98 backdrop-blur-lg lg:hidden z-40"
+            className="fixed inset-0 top-16 lg:hidden z-40"
           >
-            <nav className="flex flex-col p-6 gap-2">
+            <nav className="flex flex-col p-6 gap-2 bg-white">
               {navItems.map((item, index) => (
                 <motion.a
                   key={item.name}
