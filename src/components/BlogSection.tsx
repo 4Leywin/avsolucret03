@@ -9,7 +9,7 @@ const articles = [
     excerpt:
       "Guía completa de mantenimiento y cuidados para mantener tu mármol en perfectas condiciones.",
     image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=300&fit=crop",
+      "/blog/01-blog.png",
     readTime: "5 min",
     category: "Mármol",
   },
@@ -18,7 +18,7 @@ const articles = [
     excerpt:
       "Preguntas frecuentes y cuidados preventivos para pisos de porcelanato de alto tránsito.",
     image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=300&fit=crop",
+      "/blog/02-blog.png",
     readTime: "4 min",
     category: "Porcelanato",
   },
@@ -27,7 +27,7 @@ const articles = [
     excerpt:
       "Manual de cuidados preventivos para lajas, mosaicos Rossello y cuarzo.",
     image:
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&h=300&fit=crop",
+      "/blog/03-blog.png",
     readTime: "6 min",
     category: "Lajas",
   },

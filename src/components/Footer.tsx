@@ -75,10 +75,21 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 border-t border-cream/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-cream/50">
-            © {currentYear} AV SOLUCRET. Todos los derechos reservados.
-          </p>
+        <div className="pt-8 border-t border-cream/10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex flex-col items-start gap-4">
+            <p className="text-xs text-cream/40">© {currentYear} AV SOLUCRET.</p>
+            <a
+              href="https://valece.vercel.app/klein-code"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-gold/30 bg-gold/5 text-xs font-medium text-cream/70 hover:bg-gold/10 hover:text-gold hover:border-gold/50 transition-all duration-200 group"
+            >
+              <svg className="w-3.5 h-3.5 text-gold/50 group-hover:text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20v-6m4 0v6m7-10.5A2.5 2.5 0 0019.5 8H4.5A2.5 2.5 0 002 10.5v7A2.5 2.5 0 004.5 20h15A2.5 2.5 0 0022 17.5v-7z" />
+              </svg>
+              <span>Desarrollado por Klein Code</span>
+            </a>
+          </div>
           <div className="flex gap-4">
             <a
               href="https://www.instagram.com/av_solucret"
