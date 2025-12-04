@@ -1,21 +1,28 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Check, ShoppingBag } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { Check, ShoppingBag } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const benefits = [
-  'Protección contra humedad y manchas',
-  'Realce del color natural de la piedra',
-  'Fácil mantenimiento y limpieza',
-  'Larga duración y resistencia',
+  "Protección contra humedad y manchas",
+  "Realce del color natural de la piedra",
+  "Fácil mantenimiento y limpieza",
+  "Larga duración y resistencia",
 ];
 
-const surfaces = ['Mármol', 'Granito', 'Terrazo', 'Laja', 'Piedra pizarra', 'Mosaicos'];
+const surfaces = [
+  "Mármol",
+  "Granito",
+  "Terrazo",
+  "Laja",
+  "Piedra pizarra",
+  "Mosaicos",
+];
 
 const ProductSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section className="section-padding bg-cream" ref={ref}>
@@ -35,16 +42,14 @@ const ProductSection = () => {
               transition={{ duration: 0.6 }}
               className="relative flex items-center justify-center"
             >
-              <div className="relative w-full max-w-md aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-gold/10 to-gold/5 flex items-center justify-center">
-                <div className="absolute inset-4 rounded-xl border border-gold/30" />
-                <div className="text-center p-8">
-                  <div className="w-32 h-40 mx-auto bg-gradient-to-b from-gold/40 to-gold/60 rounded-lg mb-4 flex items-center justify-center">
-                    <span className="text-6xl">🧴</span>
-                  </div>
-                  <span className="text-sm font-medium text-gold">1/4 Galón</span>
-                </div>
+              <div className="relative w-full h-[30rem] max-w-md aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-gold/10 to-gold/5 p-6">
+                <img
+                  src="/products/solucret-01.jpg"
+                  alt="Sellador Profesional para Piedra"
+                  className="w-full h-full object-cover rounded-xl bg-red-300"
+                />
                 {/* Shine effect */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent pointer-events-none rounded-2xl" />
               </div>
             </motion.div>
 
@@ -62,8 +67,9 @@ const ProductSection = () => {
                 Sellador Profesional para Piedra
               </h2>
               <p className="text-muted-foreground mb-6">
-                Sellador de alta calidad diseñado para proteger y realzar la belleza natural 
-                de todo tipo de piedras y superficies porosas.
+                Sellador diseñado para mármol, granito, terrazo, laja, piedra
+                pizarra y mosaicos. Protege contra humedad, realza el color y
+                facilita el mantenimiento.
               </p>
 
               {/* Benefits */}
@@ -80,7 +86,9 @@ const ProductSection = () => {
 
               {/* Surfaces */}
               <div className="mb-8">
-                <p className="text-sm font-medium text-muted-foreground mb-3">Apto para:</p>
+                <p className="text-sm font-medium text-muted-foreground mb-3">
+                  Apto para:
+                </p>
                 <div className="flex flex-wrap gap-2">
                   {surfaces.map((surface) => (
                     <span
@@ -94,7 +102,11 @@ const ProductSection = () => {
               </div>
 
               <Button variant="gold" size="lg" className="w-fit" asChild>
-                <a href="https://wa.me/51961801932?text=Hola, me interesa el sellador profesional para piedra" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://wa.me/51961801932?text=Hola, me interesa el sellador profesional para piedra"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <ShoppingBag className="w-5 h-5" />
                   Consultar Disponibilidad
                 </a>

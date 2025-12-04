@@ -1,43 +1,49 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
+} from "@/components/ui/accordion";
 
 const faqs = [
   {
-    question: '¿Cuánto tiempo dura el proceso de pulido diamantado?',
-    answer: 'El tiempo varía según el tamaño del área y el estado de la superficie. En promedio, un proyecto residencial puede tomar entre 1 a 3 días. Proyectos comerciales más grandes pueden requerir más tiempo.',
+    question: "¿Cuánto tiempo dura el proceso de pulido diamantado?",
+    answer:
+      "El tiempo varía según el tamaño del área y el estado de la superficie. En promedio, un proyecto residencial puede tomar entre 1 a 3 días. Proyectos comerciales más grandes pueden requerir más tiempo.",
   },
   {
-    question: '¿Qué tipos de superficies pueden pulir?',
-    answer: 'Trabajamos con una amplia variedad de superficies: mármol, granito, terrazo, porcelanato, concreto, lajas, piedra pizarra, cuarzo y mosaicos. Cada tipo de superficie requiere un tratamiento especializado.',
+    question: "¿Qué tipos de superficies pueden pulir?",
+    answer:
+      "Trabajamos con una amplia variedad de superficies: mármol, granito, terrazo, porcelanato, concreto, lajas, piedra pizarra, cuarzo y mosaicos. Cada tipo de superficie requiere un tratamiento especializado.",
   },
   {
-    question: '¿Cuánto tiempo dura el brillo después del pulido?',
-    answer: 'Con el mantenimiento adecuado, el brillo puede durar entre 3 a 5 años. Ofrecemos recomendaciones de cuidado y productos de mantenimiento para prolongar los resultados.',
+    question: "¿Cuánto tiempo dura el brillo después del pulido?",
+    answer:
+      "Con el mantenimiento adecuado, el brillo puede durar entre 1 a 2 años. Ofrecemos recomendaciones de cuidado y productos de mantenimiento para prolongar los resultados.",
   },
   {
-    question: '¿Ofrecen garantía por el trabajo realizado?',
-    answer: 'Sí, todos nuestros trabajos cuentan con garantía. La duración de la garantía depende del tipo de servicio, pero generalmente ofrecemos garantía de 1 año en pulido y vitrificado.',
+    question: "¿Ofrecen garantía por el trabajo realizado?",
+    answer:
+      "Sí, todos nuestros trabajos cuentan con garantía. La duración de la garantía depende del tipo de servicio, pero generalmente ofrecemos garantía de 1 año en pulido y vitrificado.",
   },
   {
-    question: '¿Trabajan en toda Lima?',
-    answer: 'Sí, cubrimos toda Lima Metropolitana y también realizamos trabajos en provincias para proyectos especiales. Contáctanos para más información sobre cobertura.',
+    question: "¿Trabajan en toda Lima?",
+    answer:
+      "Sí, cubrimos toda Lima Metropolitana y también realizamos trabajos en provincias para proyectos especiales. Contáctanos para más información sobre cobertura.",
   },
   {
-    question: '¿Cómo puedo solicitar una cotización?',
-    answer: 'Puedes contactarnos por WhatsApp al 961 801 932 o llenar nuestro formulario de contacto. Programamos una visita gratuita para evaluar tu espacio y brindarte una cotización detallada.',
+    question: "¿Cómo puedo solicitar una cotización?",
+    answer:
+      "Puedes contactarnos por WhatsApp al 961 801 932 o llenar nuestro formulario de contacto. Programamos una visita gratuita para evaluar tu espacio y brindarte una cotización detallada.",
   },
 ];
 
 const FAQSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section className="section-padding bg-cream" ref={ref}>

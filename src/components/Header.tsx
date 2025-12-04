@@ -1,16 +1,16 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const navItems = [
-  { name: 'Inicio', href: '#hero' },
-  { name: 'Nosotros', href: '#about' },
-  { name: 'Servicios', href: '#services' },
-  { name: 'Trabajos', href: '#gallery' },
-  { name: 'Proceso', href: '#process' },
-  { name: 'Precios', href: '#pricing' },
-  { name: 'Contacto', href: '#contact' },
+  { name: "Inicio", href: "#hero" },
+  { name: "Nosotros", href: "#about" },
+  { name: "Servicios", href: "#services" },
+  { name: "Trabajos", href: "#gallery" },
+  { name: "Proceso", href: "#process" },
+  { name: "Precios", href: "#pricing" },
+  { name: "Contacto", href: "#contact" },
 ];
 
 const Header = () => {
@@ -22,9 +22,14 @@ const Header = () => {
         <nav className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-2">
-            <span className="font-heading text-2xl md:text-3xl font-bold text-foreground">
+            {/* <span className="font-heading text-2xl md:text-3xl font-bold text-foreground">
               AV <span className="text-gold">SOLUCRET</span>
-            </span>
+            </span> */}
+            <img
+              src="main/logo.png"
+              alt="Logo Av Solucret"
+              className="h-24 aspect-video object-contain "
+            />
           </a>
 
           {/* Desktop Navigation */}
@@ -42,12 +47,19 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            <a href="tel:961801932" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-gold transition-colors">
+            {/* <a
+              href="tel:961801932"
+              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-gold transition-colors"
+            >
               <Phone className="w-4 h-4" />
               <span>961 801 932</span>
-            </a>
+            </a> */}
             <Button variant="gold" size="sm" asChild>
-              <a href="https://wa.me/51961801932" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://wa.me/51961801932"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Cotizar Ahora
               </a>
             </Button>
@@ -68,10 +80,10 @@ const Header = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, x: '100%' }}
+            initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ type: 'tween', duration: 0.3 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "tween", duration: 0.3 }}
             className="fixed inset-0 top-16 bg-background/98 backdrop-blur-lg lg:hidden z-40"
           >
             <nav className="flex flex-col p-6 gap-2">
@@ -94,15 +106,19 @@ const Header = () => {
                 transition={{ delay: 0.4 }}
                 className="mt-6 flex flex-col gap-4"
               >
-                <a 
-                  href="tel:961801932" 
+                {/* <a
+                  href="tel:961801932"
                   className="flex items-center justify-center gap-2 py-3 text-muted-foreground"
                 >
                   <Phone className="w-5 h-5" />
                   <span>961 801 932</span>
-                </a>
+                </a> */}
                 <Button variant="gold" size="lg" className="w-full" asChild>
-                  <a href="https://wa.me/51961801932" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://wa.me/51961801932"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Cotizar Ahora
                   </a>
                 </Button>
