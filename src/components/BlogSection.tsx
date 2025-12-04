@@ -1,35 +1,41 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { ArrowRight, Clock } from 'lucide-react';
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { ArrowRight, Clock } from "lucide-react";
 
 const articles = [
   {
-    title: 'Cómo cuidar tu piso de mármol',
-    excerpt: 'Consejos profesionales para mantener el brillo y proteger tu inversión en pisos de mármol natural.',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=300&fit=crop',
-    readTime: '5 min',
-    category: 'Mármol',
+    title: "Cuidados preventivos del mármol",
+    excerpt:
+      "Guía completa de mantenimiento y cuidados para mantener tu mármol en perfectas condiciones.",
+    image:
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=300&fit=crop",
+    readTime: "5 min",
+    category: "Mármol",
   },
   {
-    title: 'Porcelanato: mantenimiento correcto',
-    excerpt: 'Guía completa para el cuidado diario y limpieza profunda de pisos de porcelanato de alto tránsito.',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=300&fit=crop',
-    readTime: '4 min',
-    category: 'Porcelanato',
+    title: "Manual de cuidados del porcelanato",
+    excerpt:
+      "Preguntas frecuentes y cuidados preventivos para pisos de porcelanato de alto tránsito.",
+    image:
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=300&fit=crop",
+    readTime: "4 min",
+    category: "Porcelanato",
   },
   {
-    title: 'Restauración de lajas naturales',
-    excerpt: 'Todo lo que necesitas saber sobre el proceso de restauración y sellado de piedras naturales.',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&h=300&fit=crop',
-    readTime: '6 min',
-    category: 'Lajas',
+    title: "Cuidados de lajas y mosaicos",
+    excerpt:
+      "Manual de cuidados preventivos para lajas, mosaicos Rossello y cuarzo.",
+    image:
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&h=300&fit=crop",
+    readTime: "6 min",
+    category: "Lajas",
   },
 ];
 
 const BlogSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section className="section-padding bg-cream" ref={ref}>
@@ -45,10 +51,11 @@ const BlogSection = () => {
             Blog & Consejos
           </span>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Guías de <span className="text-gold">cuidado</span>
+            Cuidados <span className="text-gold">Preventivos</span>
           </h2>
           <p className="text-muted-foreground">
-            Aprende a mantener tus superficies en perfectas condiciones con nuestros consejos profesionales.
+            Preguntas frecuentes y manuales de cuidados para mármol,
+            porcelanato, laja, mosaicos Rossello y cuarzo.
           </p>
         </motion.div>
 

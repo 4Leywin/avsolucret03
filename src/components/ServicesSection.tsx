@@ -1,38 +1,42 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { Sparkles, Shield, Droplets, Layers } from 'lucide-react';
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { Sparkles, Shield, Droplets, Layers } from "lucide-react";
 
 const services = [
   {
     icon: Sparkles,
-    title: 'Pulido Diamantado y Vitrificado',
-    description: 'Restauramos el brillo original de tus superficies con tecnología de punta y acabados de cristal.',
-    features: ['Mármol', 'Granito', 'Terrazo'],
+    title: "Pulido Diamantado y Vitrificado",
+    description:
+      "Restauramos el brillo original de mármol, granito, terrazo y concreto con tecnología de punta y acabados brillantes duraderos.",
+    features: ["Mármol", "Granito", "Terrazo", "Concreto"],
   },
   {
     icon: Shield,
-    title: 'Pulido y Sellado de Pisos',
-    description: 'Protección duradera que mantiene tus pisos brillantes y resistentes al desgaste diario.',
-    features: ['Concreto', 'Cemento pulido', 'Pisos industriales'],
+    title: "Pulido y Sellado de Tableros y Encimeras",
+    description:
+      "Restauración y sellado especializado de tableros y encimeras de mármol y granito, devolviendo el brillo y protección a tus superficies.",
+    features: ["Mármol", "Granito", "Encimeras", "Tableros"],
   },
   {
     icon: Droplets,
-    title: 'Decapado, Lavado y Sellado',
-    description: 'Limpieza profunda y sellado especializado para lajas y piedras naturales.',
-    features: ['Lajas', 'Piedra pizarra', 'Piedras naturales'],
+    title: "Decapado, Lavado y Sellado",
+    description:
+      "Limpieza profunda, decapado profesional y sellado especializado para lajas y piedras naturales con resultados garantizados.",
+    features: ["Lajas", "Piedras naturales", "Piedra pizarra"],
   },
   {
     icon: Layers,
-    title: 'Decapado y Sellado Porcelanato',
-    description: 'Tratamiento especializado para porcelanatos de alto tránsito con máxima protección.',
-    features: ['Porcelanato', 'Cerámicos', 'Alto tránsito'],
+    title: "Decapado y Sellado de Porcelanato",
+    description:
+      "Tratamiento especializado para porcelanatos de alto tránsito con máxima protección y recuperación del brillo original.",
+    features: ["Porcelanato", "Alto tránsito", "Restauración"],
   },
 ];
 
 const ServicesSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section id="services" className="section-padding bg-background" ref={ref}>
@@ -51,8 +55,8 @@ const ServicesSection = () => {
             Soluciones <span className="text-gold">profesionales</span>
           </h2>
           <p className="text-muted-foreground">
-            Ofrecemos servicios integrales de restauración y mantenimiento de superficies 
-            con los más altos estándares de calidad.
+            Ofrecemos servicios integrales de restauración y mantenimiento de
+            superficies con los más altos estándares de calidad.
           </p>
         </motion.div>
 
@@ -68,7 +72,7 @@ const ServicesSection = () => {
             >
               {/* Gold border top */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-lg" />
-              
+
               <div className="flex items-start gap-5">
                 <div className="p-4 rounded-xl bg-gold/10 text-gold group-hover:bg-gold group-hover:text-primary-foreground transition-colors duration-300">
                   <service.icon className="w-7 h-7" />
