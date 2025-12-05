@@ -5,34 +5,28 @@ import { Target, Eye, Award, Shield } from "lucide-react";
 
 const surfaces = [
   {
-    name: "Mármol",
-    image:
-      "/general/piso-marmol.webp",
+    name: "Pulido diamantado vitrificado de Mosaicos empastados",
+    image: "/gallery/pulido-diamantado-vitrificado.jpeg",
   },
   {
-    name: "Granito",
-    image:
-      "/general/piso-granito.webp",
+    name: "Pulido diamantado de Mármol crema Marfil - alto brillo",
+    image: "/gallery/pulido-diamantado-de-marmol-marfil.jpeg",
   },
   {
-    name: "Terrazo",
-    image:
-      "/general/piso-terrazo.jpg",
+    name: "Pulido diamantado y sellado de concreto expuesto",
+    image: "/gallery/pulido-diamantado-y-sellado.jpeg",
   },
   {
-    name: "Porcelanato",
-    image:
-      "/general/piso-porcelanato.webp",
+    name: "Pulido diamantado de mármol Travertino",
+    image: "/gallery/pulido-diamantado-de-marmol-travertino.jpeg",
   },
   {
-    name: "Concreto",
-    image:
-      "/general/piso-concreto.jpg",
+    name: "Decapado y sellado de lajas",
+    image: "/gallery/decapado-y-sellado-de-lajas.jpeg",
   },
   {
-    name: "Lajas",
-    image:
-      "/general/piso-lajas.webp",
+    name: "Pulido diamantado de losetas de granito - Terrazo",
+    image: "/gallery/pulido-diamantado-de-losetas-de-granito-terrazo.jpeg",
   },
 ];
 
@@ -123,7 +117,7 @@ const AboutSection = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-3 grid-rows-3 gap-3 h-[500px]"
+            className="grid grid-cols-3 grid-rows-3 gap-3 h-[550px]"
           >
             {surfaces.map((surface, index) => {
               const isLarge = index === 0 || index === 3;

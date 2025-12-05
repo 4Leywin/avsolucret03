@@ -20,9 +20,9 @@ const faqs = [
       "Trabajamos con una amplia variedad de superficies: mármol, granito, terrazo, porcelanato, concreto, lajas, piedra pizarra, cuarzo y mosaicos. Cada tipo de superficie requiere un tratamiento especializado.",
   },
   {
-    question: "¿Cuánto tiempo dura el brillo después del pulido?",
+    question: "¿Cuánto tiempo dura el brillo después del cristalizado?",
     answer:
-      "Con el mantenimiento adecuado, el brillo puede durar entre 1 a 2 años. Ofrecemos recomendaciones de cuidado y productos de mantenimiento para prolongar los resultados.",
+      "Con el mantenimiento adecuado, el brillo del cristalizado puede durar entre 1 a 2 años. Ofrecemos recomendaciones de cuidado y productos de mantenimiento para prolongar los resultados.",
   },
   {
     question: "¿Ofrecen garantía por el trabajo realizado?",
